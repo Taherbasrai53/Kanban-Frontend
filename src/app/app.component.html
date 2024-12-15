@@ -1,0 +1,31 @@
+<h2> Kanban Board</h2>
+
+<div class="board">
+  <div class="pending-div" cdkDropList [cdkDropListData]="pending" (cdkDropListDropped)="onDrop($event)">
+    <h3>Pending</h3>
+    <div *ngFor="let card of pending" cdkDrag>
+      <p-card>{{ card.content }}</p-card>
+    </div>
+  </div>
+
+  <div class="in-progress-div" cdkDropList [cdkDropListData]="inProgress" (cdkDropListDropped)="onDrop($event)">
+    <h3>In Progress</h3>
+    <div *ngFor="let card of inProgress" cdkDrag>
+      <p-card>{{ card.content }}</p-card>
+    </div>
+  </div>
+
+  <div class="completed-div" cdkDropList [cdkDropListData]="completed" (cdkDropListDropped)="onDrop($event)">
+    <h3>Completed</h3>
+    <div *ngFor="let card of completed" cdkDrag>
+      <p-card>{{ card.content }}</p-card>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div> -->
